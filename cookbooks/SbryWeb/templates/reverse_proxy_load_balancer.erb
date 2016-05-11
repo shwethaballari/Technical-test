@@ -1,0 +1,12 @@
+upstream test {
+
+ server 10.3.0.9:8484;
+ server 10.3.0.10:8484;
+
+}
+
+server {
+  location / {
+        proxy_pass http://test;
+    }       
+}
